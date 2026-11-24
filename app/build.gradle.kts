@@ -11,19 +11,35 @@ android {
     namespace = "io.github.romanvht.byedpi"
     //noinspection GradleDependency
     compileSdk = 36
+    ndkVersion = "27.2.12479018"
 
     defaultConfig {
-        applicationId = "io.github.romanvht.byedpi"
+        applicationId = "ru.autodpi.tv"
         minSdk = 21
         //noinspection OldTargetApi
         targetSdk = 34
-        versionCode = 1820
-        versionName = "1.8.2"
+        versionCode = 1821
+        versionName = "1.8.2-auto"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
             abiFilters.addAll(abis)
+        }
+
+        // Репозиторий со своим списком стратегий (подставляется из GitHub Actions)
+        val repo = (project.findProperty("strategiesRepo") as String?) ?: ""
+        val branch = (project.findProperty("strategiesBranch") as String?) ?: "main"
+        buildConfigField("String", "STRATEGIES_REPO", "\"$repo\"")
+        buildConfigField("String", "STRATEGIES_BRANCH", "\"$branch\"")
+    }
+
+    signingConfigs {
+        create("autodpi") {
+            storeFile = file("autodpi.jks")
+            storePassword = "autodpi123"
+            keyAlias = "autodpi"
+            keyPassword = "autodpi123"
         }
     }
 
@@ -36,10 +52,12 @@ android {
         release {
             buildConfigField("String", "VERSION_NAME",  "\"${defaultConfig.versionName}\"")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
+            signingConfig = signingConfigs.getByName("autodpi")
         }
         debug {
+            signingConfig = signingConfigs.getByName("autodpi")
             buildConfigField("String", "VERSION_NAME",  "\"${defaultConfig.versionName}-debug\"")
         }
     }
@@ -89,6 +107,7 @@ dependencies {
     implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("com.google.android.material:material:1.13.0")
     implementation("com.google.code.gson:gson:2.14.0")
+    implementation("androidx.work:work-runtime-ktx:2.9.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")

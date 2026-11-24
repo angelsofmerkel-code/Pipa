@@ -271,6 +271,7 @@ class TestService : Service() {
                         "::", "[::]" -> "::1"
                         else -> configuration.host
                     }
+                    val checkStart = android.os.SystemClock.elapsedRealtime()
                     SiteCheckUtils(host, configuration.port).checkSitesAsync(
                         sites = settings.sites,
                         requestsCount = settings.requestsCount,
@@ -286,6 +287,7 @@ class TestService : Service() {
                             }
                         }
                     )
+                    strategy.elapsedMs = android.os.SystemClock.elapsedRealtime() - checkStart
                     true
                 }
                 try {
@@ -354,6 +356,7 @@ class TestService : Service() {
     private fun resetStrategyResult(strategy: StrategyResult, settings: TestSettings) {
         strategy.successCount = 0
         strategy.currentProgress = 0
+        strategy.elapsedMs = 0L
         strategy.siteResults.clear()
         strategy.siteResults.addAll(settings.sites.map { SiteResult(it, 0, settings.requestsCount) })
     }
