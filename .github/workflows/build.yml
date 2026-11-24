@@ -23,9 +23,12 @@ jobs:
           java-version: 17
 
       - name: Install SDK / NDK / CMake
+        continue-on-error: true
         run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "platforms;android-36" "build-tools;36.0.0" "cmake;3.22.1" "ndk;27.2.12479018"
+          SDKM=$(find "$ANDROID_HOME/cmdline-tools" -path "*bin/sdkmanager" | head -n1)
+          echo "sdkmanager: $SDKM"
+          yes | "$SDKM" --licenses > /dev/null || true
+          "$SDKM" "platforms;android-36" "build-tools;36.0.0" "cmake;3.22.1" "ndk;27.2.12479018"
 
       - uses: gradle/actions/setup-gradle@v4
 
