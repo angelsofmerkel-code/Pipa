@@ -19,3 +19,63 @@ s1 -q1 -Y -Ar -s5 -o25000+s -At -f-1 -r1+s -As -s1 -o1+s -s-1 -An -b+500
 -o1 -o25+s -At
 -s1 -q1 -Y -At -f-1 -r1+s
 -s1 -o1+s -s-1 -An -Ar
+-s1 -o1 -At
+-d1 -At
+-o1 -T3 -At
+-o1 -b+1 -At
+-d1 -s1 -o1 -At
+-d1 -s1 -o1 -At -Ar
+-s1 -s3 -s5 -o1 -At
+-s1 -s3 -s5 -o1 -Ar -At -f-1 -r1+s
+-o1 -o25+s -At
+-o1 -o25+s -At -Ar -f-1 -r1+s
+-s1 -d2 -o1 -b+500 -At
+-s1 -d2 -o1 -b+500 -At -Ar
+-s1 -q1 -Y -At -f-1 -r1+s
+-s1 -o1+s -s-1 -An -Ar
+-s1 -o1 -Ar -o1 -At -f-1 -r1+s -As
+-s1 -q1 -Y -a2 -Art -f-1 -r1+s -a3 -Asn
+-Ku -a1 -An -o1 -At,r,s -d1
+-Ku -a1 -An -o1 -At,r,s -d1 -f-1 -r1+s
+-Ku -a2 -An -s1 -o1 -At,r,s -d1 -f-1 -r1+s
+-Ku -a1 -An -s1 -o1 -At,r,s -d1 -b+500
+-Ku -a3 -An -s1 -o1 -At,r,s -d1 -f-1 -r1+s
+-Ku -a1 -An -s1 -d1 -o1 -At,r,s -f-1 -r1+s -As
+-s1 -o1 -Ar -o1 -At -f-1 -r1+s -As -s1 -o1+s -s-1 -An
+-s1 -q1 -Y -Ar -s5 -o25000+s -At -f-1 -r1+s -As -s1 -o1+s -s-1 -An -b+500
+-o1 -Ar -f-1 -t3 -s1 -At
+-o1 -Ar -f-1 -t4 -s1 -At
+-o1 -Ar -f-1 -t5 -s1 -At
+-o1 -Ar -f-1 -t6 -s1 -At
+-o1 -Ar -f-1 -t7 -s1 -At
+-o1 -Ar -f-1 -t8 -s1 -At
+-s1 -o1 -Ar -f-1 -t3 -s1 -At -As
+-s1 -o1 -Ar -f-1 -t4 -s1 -At -As
+-s1 -o1 -Ar -f-1 -t5 -s1 -At -As
+-s1 -d1 -o1 -Ar -f-1 -t3 -At
+-s1 -d1 -o1 -Ar -f-1 -t4 -At
+-s1 -d1 -o1 -Ar -f-1 -t5 -At
+-s2 -o2 -Ar -o1 -At -f-1 -r1+s -As
+-s1 -s2 -s3 -o1 -Ar -At -f-1 -r1+s
+-s1 -s2 -s4 -s6 -o1 -Ar -At -f-1 -r1+s
+-d1 -d2 -o1 -Ar -At
+-d1 -d3 -o1 -Ar -At -f-1 -r1+s
+-o1 -o2+s -At -Ar -f-1 -r1+s
+-o1 -o5+s -At -Ar -f-1 -r1+s
+-o1 -o10+s -At -Ar -f-1 -r1+s
+-s1 -o1+s -At -Ar -f-1 -r1+s -As -b+1
+-s1 -o1+s -At -Ar -f-1 -r1+s -As -b+500
+-s1 -q1 -Y -Ar -s3 -o1+s -At -f-1 -r1+s -As
+-s1 -q1 -Y -Ar -s5 -o1+s -At -f-1 -r1+s -As -s1 -o1+s -s-1 -An
+-s1 -o1 -T3 -Ar -f-1 -r1+s -As
+-s1 -d1 -T3 -Ar -f-1 -r1+s -As
+-o1 -b+1 -Ar -f-1 -r1+s -As -At
+-o1 -b+500 -Ar -f-1 -r1+s -As -At
+-s1 -o1 -b+1 -d1 -At
+-s1 -o1 -b+500 -d1 -At
+-s1 -q1 -Y -Ar -o1 -At -f-1 -r1+s -As -An
+-s1 -q1 -Y -Ar -s2 -o1+s -At -f-1 -r1+s -As -An
+-s1 -q1 -Y -Ar -s4 -o1+s -At -f-1 -r1+s -As -An -b+1
+-s1 -o1 -Ar -f-1 -r1+s -As -d1 -b+500
+-d1 -o1 -Ar -f-1 -r1+s -As -T3
+-s1 -s2 -d1 -o1 -Ar -At -f-1 -r1+s -As
